@@ -36,6 +36,7 @@ const AdminDashboard = () => {
               <th style={{ padding: '1rem' }}>ID</th>
               <th style={{ padding: '1rem' }}>Student Email</th>
               <th style={{ padding: '1rem' }}>Title</th>
+              <th style={{ padding: '1rem' }}>Description</th>
               <th style={{ padding: '1rem' }}>Date</th>
               <th style={{ padding: '1rem' }}>Status</th>
               <th style={{ padding: '1rem' }}>Action</th>
@@ -47,13 +48,14 @@ const AdminDashboard = () => {
                 <td style={{ padding: '1rem', color: 'var(--primary-color)' }}>{c.complaint_id}</td>
                 <td style={{ padding: '1rem' }}>{c.student_email}</td>
                 <td style={{ padding: '1rem' }}>{c.title}</td>
+                <td style={{ padding: '1rem' }}>{c.description}</td>
                 <td style={{ padding: '1rem' }}>{new Date(c.created_at).toLocaleDateString()}</td>
                 <td style={{ padding: '1rem' }}>
                   <span className={`badge badge-${c.status.replace(' ', '')}`}>{c.status}</span>
                 </td>
                 <td style={{ padding: '1rem' }}>
-                  <select 
-                    className="form-input" 
+                  <select
+                    className="form-input"
                     style={{ padding: '0.4rem', width: 'auto' }}
                     value={c.status}
                     onChange={(e) => updateStatus(c.id, e.target.value)}
