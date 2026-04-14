@@ -11,7 +11,7 @@ const Register = ({ setUser }) => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await api.post('/auth/register', { name, email, password });
+      await api.post('/api/auth/register', { name, email, password });
       alert('Registration successful. Please login.');
       navigate('/login');
     } catch (err) {
