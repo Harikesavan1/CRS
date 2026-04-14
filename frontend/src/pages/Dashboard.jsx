@@ -8,7 +8,7 @@ const Dashboard = ({ user }) => {
 
   const fetchComplaints = async () => {
     try {
-      const res = await api.get('/complaints/my');
+      const res = await api.get('/api/complaints/my');
       setComplaints(res.data);
     } catch (err) {
       console.error(err);
@@ -22,7 +22,7 @@ const Dashboard = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.post('/complaints', { title, description });
+      await api.post('/api/complaints', { title, description });
       setTitle('');
       setDescription('');
       fetchComplaints();
