@@ -6,7 +6,7 @@ const AdminDashboard = () => {
 
   const fetchComplaints = async () => {
     try {
-      const res = await api.get('/complaints');
+      const res = await api.get('/api/complaints');
       setComplaints(res.data);
     } catch (err) {
       console.error(err);
@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await api.put(`/complaints/${id}/status`, { status });
+      await api.put(`/api/complaints/${id}/status`, { status });
       fetchComplaints();
     } catch (err) {
       alert('Update failed');

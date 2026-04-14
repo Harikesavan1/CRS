@@ -12,7 +12,7 @@ const TrackComplaint = () => {
     try {
       setError('');
       setResult(null);
-      const res = await api.get(`/complaints/track/${query}`);
+      const res = await api.get(`/api/complaints/track/${query}`);
       setResult(res.data);
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to track complaint');
